@@ -6,12 +6,16 @@
              Title="Cadastrar cliente">
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="10">
+            <Button Text="voltar"
+                    Clicked="VoltarClicked"
+                    BackgroundColor="Orange"
+                    TextColor="Black"/>
             <Label Text="Cadastrar cliente"
                    FontSize="20"
                    HorizontalOptions="Center"
                    Margin="0,20,0,20"/>
             <Label Text="ID:" />
-            <Entry x:Name="IdEntry"/>
+            <Label x:Name="IdLabel"/>
             <Label Text="Nome:" />
             <Entry Placeholder="Digite o nome" x:Name="NomeEntry"/>
             <Label Text="Sobrenome:" />

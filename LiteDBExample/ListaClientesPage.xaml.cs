@@ -19,4 +19,8 @@ public partial class ListaClientesPage : ContentPage
     Application.Current.MainPage = page;
   }
 
+  void NovoClienteClicked(object sender, EventArgs e)
+  {
+    Application.Current.MainPage = new CadastroClientePage();
+  }
 }
