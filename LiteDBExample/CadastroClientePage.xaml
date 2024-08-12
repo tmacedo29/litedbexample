@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LiteDBExample.CadastroClientePage"
+             BackgroundColor="Black"
+             Title="Cadastrar cliente">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="10">
+            <Label Text="Cadastrar cliente"
+                   FontSize="20"
+                   HorizontalOptions="Center"
+                   Margin="0,20,0,20"/>
+            <Label Text="ID:" />
+            <Entry x:Name="IdEntry"/>
+            <Label Text="Nome:" />
+            <Entry Placeholder="Digite o nome" x:Name="NomeEntry"/>
+            <Label Text="Sobrenome:" />
+            <Entry Placeholder="Digite o sobrenome" x:Name="SobrenomeEntry"/>
+            <Label Text="Telefone:" />
+            <Entry Placeholder="Digite o telefone" x:Name="TelefoneEntry"/>
+
+            <HorizontalStackLayout Spacing="20" HorizontalOptions="Center">
+                <Button Text="Limpar"
+                        TextColor="Red"
+                        BackgroundColor="Transparent"
+                        Clicked="OnApagarDadosClicked"/>
+                <Button Text="SALVAR DADOS"
+                        TextColor="Green"
+                        BackgroundColor="Transparent"
+                        Clicked="OnSalvarDadosClicked"/>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

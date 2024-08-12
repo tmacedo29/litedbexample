@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LiteDBExample.ListaClientesPage"
+             BackgroundColor="LightBlue"
+             Title="Cadastrar cliente">
+  <ListView x:Name="ListaClientes"
+            HasUnevenRows="True"
+            ItemSelected="Josefina"
+            HorizontalOptions="Fill"
+            VerticalOptions="Fill">
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <VerticalStackLayout>
+            <HorizontalStackLayout>
+              <Label Text="{Binding Nome}"
+                    FontSize="20"/>
+              <Label Text="{Binding Sobrenome}"
+                     Margin="20,0,0,0"
+                    FontSize="20"/>
+            </HorizontalStackLayout>
+            <Label Text="{Binding Telefone}"
+                   FontSize="14"/>
+            <Label Text="{Binding Id}"
+                    FontSize="50"
+                    TextColor="Pink"/>
+          </VerticalStackLayout> 
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
+</ContentPage>
