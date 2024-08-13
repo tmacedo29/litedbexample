@@ -12,7 +12,7 @@
           Clicked="NovoClienteClicked"/>
     <ListView x:Name="ListaClientes"
               HasUnevenRows="True"
-              ItemSelected="Josefina"
+              ItemSelected="QuandoSelecionarUmItemNaLista"
               HorizontalOptions="Fill"
               VerticalOptions="Fill">
       <ListView.ItemTemplate>
