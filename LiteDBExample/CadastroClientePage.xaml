@@ -23,6 +23,10 @@
             <Label Text="Telefone:" />
             <Entry Placeholder="Digite o telefone" x:Name="TelefoneEntry"/>
 
+            <Label Text="Estado"/>
+            <Picker x:Name="pickerEstado"
+                    ItemDisplayBinding="{Binding Nome}"/>
+
             <HorizontalStackLayout Spacing="20" HorizontalOptions="Center">
                 <Button Text="Limpar"
                         TextColor="Red"

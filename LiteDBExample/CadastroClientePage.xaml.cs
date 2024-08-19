@@ -10,12 +10,14 @@ public partial class CadastroClientePage : ContentPage
   // ClienteControle que irá criar/atualizar o Banco de Dados
   public Cliente cliente { get; set; }
   Controles.ClienteControle clienteControle = new Controles.ClienteControle();
+  Controles.EstadoControle estadoControle = new Controles.EstadoControle();
 
   //--------------------------------------------------------------------------------------------------
 
 	public CadastroClientePage()
 	{
 		InitializeComponent();
+    pickerEstado.ItemsSource = estadoControle.LerTodos();
 	}
 
   //--------------------------------------------------------------------------------------------------
@@ -38,6 +40,7 @@ public partial class CadastroClientePage : ContentPage
       NomeEntry.Text      = cliente.Nome;
       SobrenomeEntry.Text = cliente.Sobrenome;
       TelefoneEntry.Text  = cliente.Telefone;
+      pickerEstado.SelectedItem = cliente.Estado;
     }
   }
 
@@ -49,6 +52,7 @@ public partial class CadastroClientePage : ContentPage
     NomeEntry.Text = string.Empty;
     SobrenomeEntry.Text = string.Empty;
     TelefoneEntry.Text = string.Empty;
+    pickerEstado.SelectedIndex = 0;
   }
 
   //--------------------------------------------------------------------------------------------------
@@ -66,6 +70,7 @@ public partial class CadastroClientePage : ContentPage
       cliente.Nome      = NomeEntry.Text;
       cliente.Sobrenome = SobrenomeEntry.Text;
       cliente.Telefone  = TelefoneEntry.Text;
+      cliente.Estado    = pickerEstado.SelectedItem as Estado;
 
       // Com o objeto preenchido enviamos para o controle para criar/atualizar no Banco de Dados
       clienteControle.CriarOuAtualizar(cliente);

@@ -10,4 +10,5 @@ public class Cliente : Registro
   public string Sobrenome { get; set; }
   public string Telefone { get; set; }
 
+  public Estado Estado { get; set; }
 }
