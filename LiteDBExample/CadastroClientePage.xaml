@@ -28,10 +28,10 @@
                     ItemDisplayBinding="{Binding Nome}"/>
 
             <HorizontalStackLayout Spacing="20" HorizontalOptions="Center">
-                <Button Text="Limpar"
+                <Button Text="Excluir"
                         TextColor="Red"
                         BackgroundColor="Transparent"
-                        Clicked="OnApagarDadosClicked"/>
+                        Clicked="OnApagarClienteClicked"/>
                 <Button Text="SALVAR DADOS"
                         TextColor="Green"
                         BackgroundColor="Transparent"

@@ -46,13 +46,23 @@ public partial class CadastroClientePage : ContentPage
 
   //--------------------------------------------------------------------------------------------------
   // Método para limpar os dados da Entry
-  private void OnApagarDadosClicked(object sender, EventArgs e)
+  private async void OnApagarClienteClicked(object sender, EventArgs e)
   {
-    IdLabel.Text = string.Empty;
-    NomeEntry.Text = string.Empty;
-    SobrenomeEntry.Text = string.Empty;
-    TelefoneEntry.Text = string.Empty;
-    pickerEstado.SelectedIndex = 0;
+    // Verifica se estamos editando um cliente ou criando um cliente
+    // Se estiver criando, não se pode apagar, já que não se tem um `cliente.Id`
+    if (cliente == null || cliente.Id < 1)
+      await DisplayAlert("Erro", "Nenhum cliente para excluir", "ok");
+    else if (await DisplayAlert("Excluir","Tem certeza que deseja excluir esse cliente?","Excluir Cliente","cancelar")) // Caso o usuário tocar no Botão "Excluir Cliente"
+    {
+      // Apaga do Banco de Dados
+      clienteControle.Apagar(cliente.Id);
+      // Volta para a tela de Lista
+      // Esse código abaixo pode ser um:
+      // await NavigationPage.PopAsync();
+      // Se você veio pra cá com um 
+      // await Navigation.PushAsync(new CadastroClientePage);
+      Application.Current.MainPage = new ListaClientesPage(); 
+    }
   }
 
   //--------------------------------------------------------------------------------------------------
